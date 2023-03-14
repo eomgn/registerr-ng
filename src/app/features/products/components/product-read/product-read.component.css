@@ -1,0 +1,8 @@
+.table {
+  margin-top: 1rem;
+}
+
+.full-width-table {
+  border-radius: 3px;
+  overflow: hidden !important;
+}

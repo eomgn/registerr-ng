@@ -1,0 +1,14 @@
+mat-sidenav {
+  width: 200px;
+}
+
+mat-icon {
+  margin-right: 1rem;
+}
+
+mat-sidenav-content {
+  background-color: #fff;
+  color: #000;
+
+  padding: 1rem;
+}
