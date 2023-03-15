@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 /* ---------------- */
 
@@ -27,6 +28,7 @@ import { HomeComponent } from './features/home/home.component';
 import { ProductsComponent } from './features/products/products.component';
 import { ProductCreateComponent } from './features/products/components/product-create/product-create.component';
 import { ProductReadComponent } from './features/products/components/product-read/product-read.component';
+import { ProductUpdateComponent } from './features/products/components/product-update/product-update.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { ProductReadComponent } from './features/products/components/product-rea
     ProductsComponent,
     ProductCreateComponent,
     ProductReadComponent,
+    ProductUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { ProductReadComponent } from './features/products/components/product-rea
     FormsModule,
     MatSnackBarModule,
     MatTableModule,
+    MatIconModule,
   ],
   providers: [{provide:LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]

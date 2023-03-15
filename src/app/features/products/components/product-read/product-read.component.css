@@ -6,3 +6,8 @@
   border-radius: 3px;
   overflow: hidden !important;
 }
+
+.button:first-child {
+  margin-right: 1rem;
+  color: #fff;
+}

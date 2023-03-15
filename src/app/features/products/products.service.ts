@@ -24,10 +24,33 @@ export class ProductsService {
   }
 
   create(product: Product): Observable<Product> {
+    
     return this.http.post<Product>(this.urlBase, product)
   }
 
   read(): Observable<Product[]> {
+
     return this.http.get<Product[]>(this.urlBase)
+  }
+
+  readById(id: string): Observable<Product> {
+
+    const url = `${this.urlBase}/${id}`;
+
+    return this.http.get<Product>(url)
+  }
+
+  update(product: Product): Observable<Product> { 
+
+    const url = `${this.urlBase}/${product.id}`;
+
+    return this.http.put<Product>(url, product)
+  }
+
+  delete(id: string): Observable<Product> { 
+
+    const url = `${this.urlBase}/${id}`;
+
+    return this.http.delete<Product>(url)
   }
 }
