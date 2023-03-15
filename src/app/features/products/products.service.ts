@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -13,7 +14,7 @@ export class ProductsService {
 
   product: Product[] = []
 
-  constructor(private http: HttpClient, public _snackbar: MatSnackBar) { }
+  constructor(private http: HttpClient, public _snackbar: MatSnackBar, private router: Router) { }
 
   openSnackbar(message: string){
     this._snackbar.open(message, 'X', {
@@ -47,10 +48,14 @@ export class ProductsService {
     return this.http.put<Product>(url, product)
   }
 
-  delete(id: string): Observable<Product> { 
+  delete(product: Product): Observable<Product> { 
 
-    const url = `${this.urlBase}/${id}`;
+    const url = `${this.urlBase}/${product.id}`;
 
     return this.http.delete<Product>(url)
+  }
+
+  cancel() {
+    return this.router.navigate(['/products'])
   }
 }

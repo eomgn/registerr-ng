@@ -12,7 +12,7 @@ export class ProductUpdateComponent implements OnInit {
 
   products!: Product
 
-  constructor(private productsService: ProductsService, private router: Router, private activeRouter: ActivatedRoute) {
+  constructor(private productsService: ProductsService, private activeRouter: ActivatedRoute) {
 
   }
 
@@ -31,13 +31,13 @@ export class ProductUpdateComponent implements OnInit {
 
       this.productsService.openSnackbar('Produto atualizado com sucesso!')
     
-      this.router.navigate(['/products'])
-
+      this.productsService.cancel()
     })
   }
 
   cancel() {
-    return this.router.navigate(['/products'])
+    
+    this.productsService.cancel()
   }
 
 }

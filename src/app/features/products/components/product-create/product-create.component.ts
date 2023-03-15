@@ -16,20 +16,21 @@ export class ProductCreateComponent {
     price: ''
   }
 
-  constructor(private productService: ProductsService, private router: Router) {
+  constructor(private productsService: ProductsService, private router: Router) {
 
   }
 
   create()  {
-    this.productService.create(this.products).subscribe(data => {
+    
+    this.productsService.create(this.products).subscribe(data => {
       this.products = data
-      this.productService.openSnackbar('Produto cadastrado com sucesso')
+      this.productsService.openSnackbar('Produto cadastrado com sucesso')
       this.router.navigate(['/products'])
     })
   }
 
   cancel() {
-    return this.router.navigate(['/products'])
+    this.productsService.cancel()
   }
 
 }
