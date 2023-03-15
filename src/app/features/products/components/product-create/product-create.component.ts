@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../../products.model';
-import { ProductsService } from '../../products.service';
+import { ProductsService } from '../../../../shared/services/products.service';
 
 @Component({
   selector: 'app-product-create',
@@ -12,6 +12,7 @@ export class ProductCreateComponent {
 
   products: Product = {
     id: 0,
+    family: '',
     name: '',
     price: ''
   }

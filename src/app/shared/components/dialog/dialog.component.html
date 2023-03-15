@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Inserir lembrete</h1>
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="dialogForm">
+    <mat-form-field class="example-full-width">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="title" name="title" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Lembrete</mat-label>
+      <textarea
+        matInput
+        type="textarea"
+        formControlName="message"
+        name="message"
+      >
+      </textarea>
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-button (click)="openCreate()" [disabled]="dialogForm.invalid">
+        Salvar
+      </button>
+      <button mat-button (click)="cancel()">Cancelar</button>
+    </div>
+  </form>
+</div>

@@ -2,13 +2,22 @@
   <mat-card-title>Novo produto</mat-card-title>
   <form>
     <mat-form-field class="example-full-width" color="warn">
+      <mat-label>Tipo</mat-label>
+      <input
+        matInput
+        placeholder="Ex: Eletrônico"
+        name="family"
+        [(ngModel)]="products.family"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" color="warn">
       <mat-label>Nome</mat-label>
       <input
         matInput
         placeholder="Ex: Notebook"
         name="name"
         [(ngModel)]="products.name"
-        required="name"
       />
     </mat-form-field>
 
@@ -19,7 +28,6 @@
         placeholder="Ex: R$ 8,000"
         name="price"
         [(ngModel)]="products.price"
-        required="price"
       />
     </mat-form-field>
   </form>

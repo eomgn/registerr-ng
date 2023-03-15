@@ -2,6 +2,17 @@
   <mat-card-title>Deletar produto</mat-card-title>
   <form>
     <mat-form-field class="example-full-width" color="warn">
+      <mat-label>Tipo</mat-label>
+      <input
+        matInput
+        placeholder="Ex: Eletrônico"
+        name="family"
+        [(ngModel)]="products.family"
+        disabled
+      />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" color="warn">
       <mat-label>Nome</mat-label>
       <input
         matInput

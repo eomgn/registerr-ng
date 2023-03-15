@@ -1,7 +1,32 @@
-mat-card {
+.cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
   padding: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title {
+  color: #fff;
+}
+
+button {
+  margin-bottom: 1rem;
+}
+
+.icons {
+  display: flex;
+  gap: 1rem;
+}
+
+mat-icon {
   color: #fff;
 }
