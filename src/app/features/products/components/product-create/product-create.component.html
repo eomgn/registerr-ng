@@ -1,14 +1,14 @@
 <mat-card>
   <mat-card-title>Novo produto</mat-card-title>
-  <form>
-    <mat-form-field class="example-full-width" color="warn">
-      <mat-label>Tipo</mat-label>
-      <input
-        matInput
-        placeholder="Ex: Eletrônico"
-        name="family"
-        [(ngModel)]="products.family"
-      />
+  <form [formGroup]="productForm">
+    <mat-form-field color="warn">
+      <mat-label>Selectionar tipo</mat-label>
+      <mat-select [(value)]="products.family" formControlName="family">
+        <mat-option> </mat-option>
+        <mat-option value="Eletrônico"> Eletrônico </mat-option>
+        <mat-option value="Comida"> Comida </mat-option>
+        <mat-option value="Livro"> Livro </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" color="warn">
@@ -16,7 +16,7 @@
       <input
         matInput
         placeholder="Ex: Notebook"
-        name="name"
+        formControlName="name"
         [(ngModel)]="products.name"
       />
     </mat-form-field>
@@ -26,13 +26,20 @@
       <input
         matInput
         placeholder="Ex: R$ 8,000"
-        name="price"
+        formControlName="price"
         [(ngModel)]="products.price"
       />
     </mat-form-field>
   </form>
   <div class="buttons">
-    <button mat-raised-button color="warn" (click)="create()">Cadastrar</button>
+    <button
+      mat-raised-button
+      color="warn"
+      [disabled]="productForm.invalid"
+      (click)="create()"
+    >
+      Cadastrar
+    </button>
     <button mat-raised-button color="accent" (click)="cancel()">
       Cancelar
     </button>

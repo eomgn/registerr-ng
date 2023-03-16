@@ -1,12 +1,12 @@
 <h1 mat-dialog-title>Inserir lembrete</h1>
 <div mat-dialog-content>
   <form class="example-form" [formGroup]="dialogForm">
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" color="warn">
       <mat-label>Título</mat-label>
       <input matInput formControlName="title" name="title" />
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" color="warn">
       <mat-label>Lembrete</mat-label>
       <textarea
         matInput
@@ -18,10 +18,17 @@
     </mat-form-field>
 
     <div mat-dialog-actions>
-      <button mat-button (click)="openCreate()" [disabled]="dialogForm.invalid">
-        Salvar
+      <button
+        mat-raised-button
+        (click)="openCreate()"
+        [disabled]="dialogForm.invalid"
+        color="warn"
+      >
+        Inserir
       </button>
-      <button mat-button (click)="cancel()">Cancelar</button>
+      <button mat-raised-button color="accent" (click)="cancel()">
+        Cancelar
+      </button>
     </div>
   </form>
 </div>

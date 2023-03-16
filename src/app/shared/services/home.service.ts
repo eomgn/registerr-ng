@@ -22,5 +22,19 @@ export class HomeService {
 
     return this.http.get<HomeModel[]>(this.urlBase)
   }
+
+  readById(id: number): Observable<HomeModel> {
+    const url = `${this.urlBase}/${id}`
+
+    return this.http.get<HomeModel>(url)
+  }
+
+
   
+
+  delete(id: number): Observable<HomeModel> {
+    const url = `${this.urlBase}/${id}`
+
+    return this.http.delete<HomeModel>(url)
+  }
 }

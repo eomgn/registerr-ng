@@ -16,6 +16,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+
 /* ---------------- */
 
 import { AppRoutingModule } from './app-routing.module';
@@ -58,7 +60,8 @@ import { DialogComponent } from './shared/components/dialog/dialog.component';
     MatTableModule,
     MatIconModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [{provide:LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]

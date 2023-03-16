@@ -10,9 +10,12 @@ import { Component } from '@angular/core';
 })
 export class ProductDeleteComponent {
 
+
   products!: Product
 
-  constructor(private productsService: ProductsService, private activeRouter: ActivatedRoute) {}
+  constructor(
+    private productsService: ProductsService, 
+    private activeRouter: ActivatedRoute) {}
 
   ngOnInit(): void {
     const id = this.activeRouter.snapshot.paramMap.get('id') as 'number'
@@ -20,6 +23,8 @@ export class ProductDeleteComponent {
     this.productsService.readById(id).subscribe(products => {
       this.products = products
     })
+
+
   }
 
   onDelete() {

@@ -1,7 +1,8 @@
 import { Product } from './../../products.model';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { ProductsService } from '../../../../shared/services/products.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-update',
@@ -10,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductUpdateComponent implements OnInit {
 
+  productForm!: FormGroup
+
+
   products!: Product
 
-  constructor(private productsService: ProductsService, private activeRouter: ActivatedRoute) {
+  constructor(
+    private productsService: ProductsService, 
+    private activeRouter: ActivatedRoute,
+    private formBuilder: FormBuilder) {
 
   }
 
@@ -22,6 +29,13 @@ export class ProductUpdateComponent implements OnInit {
 
     this.productsService.readById(id).subscribe(products => {
       this.products = products
+    })
+
+      /* validator of form */
+    this.productForm = this.formBuilder.group({
+      family: ['', Validators.required],
+      name: ['', Validators.required],
+      price: ['', Validators.required],
     })
   }
 

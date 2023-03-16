@@ -14,9 +14,13 @@ export class HomeComponent implements OnInit{
 
   homeModel: HomeModel[] = []
 
+  homeModelUpdate!: HomeModel
 
-
-  constructor(private headerService: HeaderService, public dialog: MatDialog, private homeService: HomeService) {
+  constructor(
+    private headerService: HeaderService, 
+    public dialog: MatDialog, 
+    private homeService: HomeService,
+    ) {
     headerService.HeaderHandled = {
       title: 'Início',
       icon: 'home',
@@ -39,5 +43,27 @@ export class HomeComponent implements OnInit{
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  editMessage(): void {
+
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`The dialog was closed ${result}`);
+    });
+}
+
+    
+  
+
+  delete(id: number) {
+
+    this.homeService.delete(id).subscribe(() => {
+
+      window.location.reload()
+    })
   }
 }

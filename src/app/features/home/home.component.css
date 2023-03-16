@@ -29,4 +29,5 @@ button {
 
 mat-icon {
   color: #fff;
+  cursor: pointer;
 }

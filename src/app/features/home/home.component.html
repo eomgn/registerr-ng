@@ -3,15 +3,15 @@
 </button>
 
 <div class="cards">
-  <mat-card class="card" *ngFor="let item of homeModel">
+  <mat-card class="card" *ngFor="let item of homeModel; let i = index">
     <span class="details">
       <mat-card-title>{{ item.message }}</mat-card-title>
       <mat-card-subtitle>{{ item.message }}</mat-card-subtitle>
     </span>
 
     <span class="icons">
-      <mat-icon class="edite">edite</mat-icon>
-      <mat-icon class="delete">delete</mat-icon>
+      <mat-icon class="edite" (click)="editMessage()">edite</mat-icon>
+      <mat-icon class="delete" (click)="delete(item.id)">delete</mat-icon>
     </span>
   </mat-card>
 </div>
