@@ -33,3 +33,7 @@ form {
   display: inline-flex;
   flex-direction: column;
 }
+
+canvas {
+  height: 100px;
+}

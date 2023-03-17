@@ -22,8 +22,8 @@ export class HomeComponent implements OnInit{
     private homeService: HomeService,
     ) {
     headerService.HeaderHandled = {
-      title: 'Início',
-      icon: 'home',
+      title: 'Lembretes',
+      icon: 'library_add',
       routerUrl: '/'
     }
   }
@@ -44,20 +44,6 @@ export class HomeComponent implements OnInit{
       console.log('The dialog was closed');
     });
   }
-
-  editMessage(): void {
-
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: '400px',
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`The dialog was closed ${result}`);
-    });
-}
-
-    
-  
 
   delete(id: number) {
 

@@ -6,6 +6,7 @@ import { HomeComponent } from './features/home/home.component';
 import { ProductsComponent } from './features/products/products.component';
 import { ProductCreateComponent } from './features/products/components/product-create/product-create.component';
 import { ProductUpdateComponent } from './features/products/components/product-update/product-update.component';
+import { DashboardComponent } from './features/dashboard/dashboard/dashboard.component';
 
 const routes: Routes = [
 
@@ -18,6 +19,8 @@ const routes: Routes = [
   {path: 'products/update/:id', component: ProductUpdateComponent},
 
   {path: 'products/delete/:id', component: ProductDeleteComponent},
+
+  {path: 'dashboard', component: DashboardComponent}
 
 ];
 

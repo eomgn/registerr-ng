@@ -33,6 +33,7 @@ import { ProductReadComponent } from './features/products/components/product-rea
 import { ProductUpdateComponent } from './features/products/components/product-update/product-update.component';
 import { ProductDeleteComponent } from './features/products/components/product-delete/product-delete.component';
 import { DialogComponent } from './shared/components/dialog/dialog.component';
+import { DashboardComponent } from './features/dashboard/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { DialogComponent } from './shared/components/dialog/dialog.component';
     ProductUpdateComponent,
     ProductDeleteComponent,
     DialogComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

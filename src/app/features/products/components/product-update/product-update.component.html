@@ -1,14 +1,14 @@
 <mat-card>
   <mat-card-title>Alterar produto</mat-card-title>
+
   <form [formGroup]="productForm">
     <mat-form-field color="warn">
       <mat-label>Selectionar tipo</mat-label>
       <mat-select
-        [(value)]="products.family"
+        [(ngModel)]="products.family"
         formControlName="family"
         [value]="products.family"
       >
-        <mat-option> </mat-option>
         <mat-option value="Eletrônico"> Eletrônico </mat-option>
         <mat-option value="Comida"> Comida </mat-option>
         <mat-option value="Livro"> Livro </mat-option>
@@ -35,6 +35,7 @@
       />
     </mat-form-field>
   </form>
+
   <div class="buttons">
     <button
       mat-raised-button

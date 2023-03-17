@@ -10,8 +10,11 @@
     </span>
 
     <span class="icons">
-      <mat-icon class="edite" (click)="editMessage()">edite</mat-icon>
       <mat-icon class="delete" (click)="delete(item.id)">delete</mat-icon>
     </span>
   </mat-card>
+
+  <ng-container *ngIf="homeModel.length === 0">
+    <p>Não há nenhum lembrete. Adicione!</p>
+  </ng-container>
 </div>
