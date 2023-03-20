@@ -31,6 +31,45 @@ Esta aplicação foi desenvolvida para cadastro de produtos aonde permite indica
 
 ---
 
+### 1. Clonando o repositório
+
+```
+git clone https://github.com/eomgn/registerr-ng
+```
+
+### 2. Instalando as dependências
+
+```
+npm install
+```
+
+### 3. Inicializando o backend
+
+```
+Já no repositorio backend execute:
+```
+
+```
+npm install > npm start
+```
+
+### 🎮 Rodando o projeto
+
+```
+1. Após iniciar o backend conforme a explicação acima.
+```
+
+```
+2. Inicie o projeto com o comando CLI:
+ng serve
+```
+
+```
+3. Agora, abra seu navegador e navegue até: http://localhost:4200
+```
+
+---
+
 ## 🔗 Redes
 
 Estas são minhas redes sociais. Sinta-se a vontade para mandar uma mensagem.
