@@ -1,3 +1,4 @@
+import { HeaderService } from 'src/app/shared/services/header.service';
 import { ProductsService } from './../../../shared/services/products.service';
 import { Product } from './../../products/products.model';
 import { Component, OnInit } from '@angular/core';
@@ -14,8 +15,16 @@ export class DashboardComponent implements OnInit {
   products: Product[] = []
 
   constructor(
-    private productsService: ProductsService
-  ) {}
+    private productsService: ProductsService,
+    private headerService: HeaderService
+  ) {
+
+    headerService.HeaderHandled = {
+      title: 'Dashboard',
+      icon: 'dashboard',
+      routerUrl: '/dashboard'
+    }
+  }
 
   chartdata: any
 
@@ -44,7 +53,7 @@ export class DashboardComponent implements OnInit {
       data: {
         labels: ['Eletrônico','Comida','Livro'],
         datasets: [{
-          label: 'Quantidade',
+          label: 'Quantidade', 
           data: [eletronic,food, book],
           backgroundColor: [
             '#f3433680',
